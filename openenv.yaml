@@ -1,0 +1,24 @@
+name: decision-intelligence-env
+version: 1.0.0
+description: Supply Chain Decision Intelligence Environment
+
+tasks:
+  easy:
+    description: Single product, single decision
+    max_steps: 10
+  medium:
+    description: Multiple products with constraints
+    max_steps: 10
+  hard:
+    description: Sequential decisions with uncertainty
+    max_steps: 10
+
+action_space:
+  type: dict
+  description: Order quantities for each product
+
+observation_space:
+  type: dict
+  description: Inventory levels and demand forecasts
+
+reward_range: [0.0, 1.0]
