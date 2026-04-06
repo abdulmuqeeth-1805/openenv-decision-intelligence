@@ -1,18 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "my-openenv-env"
-version = "0.1.0"
-description = "My OpenEnv Environment"
+name = "decision-intelligence-env"
+version = "1.0.0"
 requires-python = ">=3.10"
 dependencies = [
     "fastapi",
     "uvicorn",
     "numpy",
-    "openenv-core",
+    "openenv-core>=0.2.0",
 ]
 
 [project.scripts]
-myenv-server = "myenv.server:main"
-
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+openenv-server = "app:main"
