@@ -1,6 +1,6 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Dict, Any
+
+from fastapi import FastAPI, Body
+from typing import Dict, Any, Optional
 import sys
 import os
 
@@ -12,35 +12,29 @@ app = FastAPI()
 
 env = None
 
-class ResetRequest(BaseModel):
-    task_id: str = "easy"
-
-class StepRequest(BaseModel):
-    action: Dict[str, int]
-    task_id: str = "easy"
-
 @app.get("/")
 def root():
     return {"message": "Decision Intelligence Environment for OpenEnv Hackathon"}
 
 @app.post("/reset")
-def reset(request: ResetRequest):
+def reset(task_id: str = Body("easy", embed=True)):
     global env
-    env = DecisionIntelligenceEnv(task_id=request.task_id)
+    env = DecisionIntelligenceEnv(task_id=task_id)
     state = env.reset()
-    return {"state": state}
+    return state
 
 @app.post("/step")
-def step(request: StepRequest):
+def step(action: Dict[str, int] = Body(...), task_id: Optional[str] = Body(None)):
     global env
     if env is None:
-        env = DecisionIntelligenceEnv(task_id=request.task_id)
+        task = task_id if task_id else "easy"
+        env = DecisionIntelligenceEnv(task_id=task)
         env.reset()
-    state, reward, done, info = env.step(request.action)
+    state, reward, done, info = env.step(action)
     return {"state": state, "reward": reward, "done": done, "info": info}
 
 @app.get("/state")
 def get_state():
     if env is None:
         return {"error": "Environment not initialized. Call /reset first."}
-    return {"state": env.get_state()}
+    return env.get_state()
