@@ -1,23 +1,18 @@
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "decision-intelligence-env"
-version = "1.0.0"
-description = "Decision Intelligence Environment for OpenEnv Hackathon"
+name = "my-openenv-env"
+version = "0.1.0"
+description = "My OpenEnv Environment"
 requires-python = ">=3.10"
 dependencies = [
     "fastapi",
     "uvicorn",
     "numpy",
-    "pydantic",
-    "openenv-core>=0.2.0",
+    "openenv-core",
 ]
 
 [project.scripts]
-inference = "inference:main"
-openenv-server = "server.app:main"
+myenv-server = "myenv.server:main"
 
-[tool.openenv]
-api_version = "1.0"
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
