@@ -5,6 +5,8 @@ requires-python = ">=3.10"
 dependencies = [
     "fastapi",
     "uvicorn",
+    "numpy",
+    "openenv-core>=0.2.0",
 ]
 
 [project.scripts]
