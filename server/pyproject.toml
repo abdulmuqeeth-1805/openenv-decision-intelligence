@@ -1,2 +1,2 @@
 [project.scripts] 
-server = "server.app:app" 
+server = "app:app" 
