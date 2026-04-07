@@ -2595,11 +2595,11 @@ wheels = [
 
 [[package]]
 name = "uncalled-for"
-version = "0.3.0"
+version = "0.3.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/b3/98/2acd616882f04f57199ca1eaf818542e7e6f09f0df2ad6d53889cf46d3d1/uncalled_for-0.3.0.tar.gz", hash = "sha256:3a2fffa03ccf92d2442084358a001ab06b4ca90aedcd93cc2f33e5b12054851b", size = 52873, upload-time = "2026-04-06T20:53:06.714Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e1/68/35c1d87e608940badbcfeb630347aa0509897284684f61fab6423d02b253/uncalled_for-0.3.1.tar.gz", hash = "sha256:5e412ac6708f04b56bef5867b5dcf6690ebce4eb7316058d9c50787492bb4bca", size = 49693, upload-time = "2026-04-07T13:05:06.462Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/72/c9/a1868434ffbe896e02c6fe4718d1bb34140a0269632c923c8e6e34ba2a44/uncalled_for-0.3.0-py3-none-any.whl", hash = "sha256:d39d98c64e740e0c0c2ead9c92e7a64e1aef0a407df5ac88318931d023ccb512", size = 13411, upload-time = "2026-04-06T20:53:05.569Z" },
+    { url = "https://files.pythonhosted.org/packages/11/e1/7ec67882ad8fc9f86384bef6421fa252c9cbe5744f8df6ce77afc9eca1f5/uncalled_for-0.3.1-py3-none-any.whl", hash = "sha256:074cdc92da8356278f93d0ded6f2a66dd883dbecaf9bc89437646ee2289cc200", size = 11361, upload-time = "2026-04-07T13:05:05.341Z" },
 ]
 
 [[package]]
