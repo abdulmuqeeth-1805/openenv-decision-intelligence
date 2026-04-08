@@ -10,4 +10,4 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "decision_intelligence_env.server.app:main"
+server = "server:main"
