@@ -1,5 +1,6 @@
 name: decision-intelligence-env
 version: 1.0.0
+app: server.app:main
 description: Supply Chain Decision Intelligence Environment
 
 tasks:
