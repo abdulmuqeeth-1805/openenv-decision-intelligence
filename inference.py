@@ -1,6 +1,6 @@
 import sys
 import json
-from openenv_env.environment import DecisionIntelligenceEnv
+from decision_intelligence_env.environment import DecisionIntelligenceEnv
 
 def main():
     task_id = sys.argv[1] if len(sys.argv) > 1 else "easy"
