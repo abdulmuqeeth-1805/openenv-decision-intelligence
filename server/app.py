@@ -1,5 +1,14 @@
-from openenv.core.env_server import create_app
-from ..models import MyAction, MyObservation
-from .my_environment import MyEnvironment
+from fastapi import FastAPI
+import uvicorn
 
-app = create_app(MyEnvironment, MyAction, MyObservation, env_name="decision-intelligence-env")
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"message": "Decision Intelligence Environment"}
+
+def main():
+    uvicorn.run(app, host="0.0.0.0", port=7860)
+
+if __name__ == "__main__":
+    main()
