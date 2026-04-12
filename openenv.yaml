@@ -1,25 +1,15 @@
-name: decision-intelligence-env
-version: 1.0.0
-app: server.app:main
-description: Supply Chain Decision Intelligence Environment
-
+spec_version: 1
+app: server.app:app
 tasks:
-  easy:
-    description: Single product, single decision
-    max_steps: 10
-  medium:
-    description: Multiple products with constraints
-    max_steps: 10
-  hard:
-    description: Sequential decisions with uncertainty
-    max_steps: 10
-
-action_space:
-  type: dict
-  description: Order quantities for each product
-
-observation_space:
-  type: dict
-  description: Inventory levels and demand forecasts
-
-reward_range: [0.0, 1.0]
+  - id: easy_task
+    name: Easy Task
+    difficulty: easy
+    grader: server.graders:EasyGrader
+  - id: medium_task
+    name: Medium Task
+    difficulty: medium
+    grader: server.graders:MediumGrader
+  - id: hard_task
+    name: Hard Task
+    difficulty: hard
+    grader: server.graders:HardGrader
